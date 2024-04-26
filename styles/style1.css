@@ -2,17 +2,46 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background-image: url(./assets/images/airplane-background.png)
+    overflow: hidden;
 }
+
+body::before{
+    content: '';
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url('../assets/images/wp10448216-airport-4k-wallpapers.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -999;
+}
+
+body::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: black;
+    z-index: -1;
+    opacity: 0.5;
+    z-index: -1;
+}
+
 
 header {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
     /* border: 1px solid black;  */
+    color: white;
 }
 
-nav{
+nav {
     display: flex;
     width: 100%;
     margin: 0px 20px;
@@ -22,9 +51,10 @@ nav{
 nav ul {
     display: flex;
     flex: 3;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
     padding: 0px 10%;
+    font-weight: 700;
 }
 
 nav ul li {
@@ -33,47 +63,126 @@ nav ul li {
     cursor: pointer;
 }
 
-#logo-container{
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+#logo-container {
     flex: 1;
     display: flex;
 }
 
-#auth-container{
+#auth-container {
     flex: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black; 
+    color: white;
     text-align: center;
-    font-size: 16px; 
+    font-size: 16px;
     margin: 10px;
 }
 
-#logo{
+#logo {
     width: 50%;
     height: 50%;
+    filter: invert(1);
 }
 
-.text-btn{
-    margin-right: 1.2rem;
+.text-btn {
+    /* margin-right: 1.2rem; */
     cursor: pointer;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 8px 20px;
     border-radius: 50px;
-    background-color: black;
+    /* background-color: black;  */
     color: white;
+    font-weight: 700;
     transition: 0.2s all linear;
 }
 
-.text-btn:hover{
+.slash {
+    width: 2px;
+    height: 1.2rem;
     background-color: white;
-    color: black;
+    transform: rotateZ(10deg);
+    margin-left: 20px;
 }
 
-.slash{
-    margin-right: 1.2rem;
-    width: 2px;
+#hero-section {
+    display: flex;
+    height: 100vh;
+    justify-content: start;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.text-container {
+    margin-left: 140px;
+    width: 35%;
+}
+
+.text-container h1 {
+    font-size: 2rem;
+}
+
+.text-container-p {
+    word-wrap: break-word;
+}
+
+#try-to-btn {
+    background-color: white;
+    color: black;
+    font-weight: 500;
+    border-radius: 5px;
+    width: 30%;
+    border: none;
+    font-family: poppins;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    transition: 0.3s all linear;
+}
+
+.btn-icon{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 20px;
+}
+
+
+#try-to-btn:hover{
+    width: 35%;
+}
+
+
+#booking {
+    display: flex;
+    background-color: rgb(255, 255, 255, 0.8);
+    height: 200px;
+    /* border: 2px solid rgb(216, 216, 216); */
+    border-radius: 0.5rem;
+    margin: 0px 50px;
+}
+
+.booking-select-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: poppins;
+    font-size: 1.1rem;  
+}
+
+.booking-section-menu {
+    display: flex;
+    padding: 10px 20px;
     height: 50px;
-    background-color: black;
-    transform: rotateZ(10deg);
+}
+
+
+.round-trip-logo{
+    /* filter: invert(1); */
 }
